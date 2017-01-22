@@ -1,0 +1,16 @@
+<div ng-controller = "loginController">
+
+  <h1>Bucket Lists</h1>
+
+  <div ng-if='loggedUser'>
+    <h4>Hi, you have logged as <span>{{user.name}}</span></h4>
+    Go to <a ng-click="goToDashboard()">Dashboard?</a>
+  </div>
+
+  <div ng-hide="loggedUser">
+    <form ng-submit="loginUserByName()">
+      Name: <input type="text" ng-model="name">
+      <input type="submit" value="Enter">
+    </form>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+bower_components
+ip.txt
+node_modules
+.DS_Store
+deployment
+publicIPAdress
+README.md

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app = "app">
+  <head>
+    <meta charset="utf-8">
+    <title>Buckets</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div ng-view = "">
+
+      </div>
+    </div>
+
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="/node_modules/angular-cookies/angular-cookies.js"></script>
+    <script src="app.js"></script>
+
+    <!-- Angular Controllers -->
+    <script src = "controllers/loginController.js"></script>
+    <script src = "controllers/dashboardController.js"></script>
+    <script src = "controllers/listController.js"></script>
+
+    <!-- Factories -->
+    <script src = "factories/userFactory.js"></script>
+
+
+  </body>
+</html>

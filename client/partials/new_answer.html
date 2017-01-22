@@ -1,0 +1,22 @@
+<h1>new answer page</h1>
+<div ng-controller = "questionIdController">
+
+  <a href="#/">Home</a> | <a href="#/question/{{question._id}}">Go Back to Question</a> | <a href="#/index">Logout</a>
+
+
+  <div class="">
+    <h3>{{question.text}}</h3>
+    <form>
+      Your Answer: <textarea ng-model = "newAnswer.text" rows="8" cols="80"></textarea>
+      Supporting details for your answer (optional): <textarea name="name" rows="8" cols="80"></textarea>
+      <button type="button" ng-click = "cancel()">Cancel</button>
+      <button type="button" ng-click = "createAnswerById(question.id)">Submit</button>
+    </form>
+
+    <br>{{error.message}}
+  </div>
+
+
+
+
+</div>

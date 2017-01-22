@@ -1,0 +1,43 @@
+<div ng-controller = "listController">
+
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#/home">Bucket List</a>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#/logout">Logout</a></li>
+    </ul>
+  </div>
+
+  <h6>{{user.name}}'s bucket list</h6>
+  <ul>
+    <!-- tagger -->
+    <p>Done</p>
+    <li ng-repeat="bucket in buckets1">
+      <input
+        type="checkbox"
+        value="{{bucket.state}}"
+        ng-checked="{{bucket.state}}"
+        readonly
+        disabled
+      >
+      {{user.name}} | {{bucket.title}} | {{bucket.description}}
+      -- {{bucket.createdAt}}
+    </li>
+
+
+    <p>Pending</p>
+    <li ng-repeat="bucket in buckets2">
+      <input
+        type="checkbox"
+        value="{{bucket.state}}"
+        ng-checked="{{bucket.state}}"
+        readonly
+        disabled
+      >
+      {{user.name}} | {{bucket.title}} | {{bucket.description}}
+      -- {{bucket.createdAt}}
+    </li>
+  </ul>
+</div>

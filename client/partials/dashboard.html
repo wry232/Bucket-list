@@ -1,0 +1,72 @@
+<div ng-controller = "dashboardController">
+
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#/home">Bucket List</a>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#/logout">Logout</a></li>
+    </ul>
+  </div>
+
+  <h2>Welcome {{user.name}}!</h2>
+
+
+  <form>
+    <input type="text" ng-model="newBucket.title" placeholder="Title">
+    <input type="text" ng-model="newBucket.description" placeholder="Description">
+
+    <select
+      placeholder="Select"
+      ng-model="taggee"
+      required="required"
+      ng-options="u.name for u in users | filter: removeUserSelf">
+    </select>
+
+    <input
+      type="submit"
+      ng-click="createNewBucket()"
+      value="Add to List">
+  </form>
+
+  <h6>Before I die I want to:</h6>
+  <ul>
+    <!-- tagger -->
+    <p>Tagger</p>
+    <li ng-repeat="bucket in buckets1">
+      <input
+        type="checkbox"
+        value="{{bucket.state}}"
+        ng-checked="{{bucket.state}}"
+        ng-click="toggleStateOfBucket(bucket)"
+      >
+      {{user.name}} | {{bucket.title}} | {{bucket.description}}
+      -- {{bucket.createdAt}}
+    </li>
+
+    <!-- taggee -->
+    <p>Taggee</p>
+    <li ng-repeat="bucket in buckets2">
+      <input
+        type="checkbox"
+        value="{{bucket.state}}"
+        ng-checked="{{bucket.state}}"
+        ng-click="toggleStateOfBucket(bucket)"
+      >
+      {{user.name}} | {{bucket.title}} | {{bucket.description}}
+      -- {{bucket.createdAt}}
+    </li>
+  </ul>
+
+
+  <h6>List of others:</h6>
+  <ul>
+    <li ng-repeat="u in users"
+        ng-if="u.name != user.name"
+        value="{{u}}" ng-click="goToUser(u)">
+        <a>{{u.name}}</a>
+    </li>
+  </ul>
+
+</div>

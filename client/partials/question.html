@@ -1,0 +1,17 @@
+<h1>question.html</h1>
+<div ng-controller = "questionIdController">
+  {{question._id}}
+  <a href="#/">Home</a> | <a href="#/question/{{question._id}}/new_answer">Answer this question</a> | <a href="#/index">Logout</a>
+<h1>{{question.text}}</h1>
+<h5>{{question._id}}</h5>
+
+<ul ng-repeat = "answer in question.answers" style="list-style-type:none">
+<li>User: {{answer.user}}</li>
+<li>{{answer.text}}</li>
+<li>{{answer._id}}</li>
+<li>{{answer.likes}} likes</li>
+<li><button type="button" ng-click = "addLikesById(answer._id, answer.likes)">Like!</button></li>
+</ul>
+
+
+</div>
